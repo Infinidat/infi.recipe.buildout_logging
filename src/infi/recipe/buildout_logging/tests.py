@@ -1,4 +1,5 @@
 from infi.unittest import TestCase
+from infi.execute import execute_assert_success
 import os
 EXTENSION = '.exe' if os.name == 'nt' else ''
 
