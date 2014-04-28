@@ -54,3 +54,6 @@ buildout.in
 
 src/infi/recipe/buildout_logging/__version__.py
 bootstrap.py
+.cache
+eggs
+parts
