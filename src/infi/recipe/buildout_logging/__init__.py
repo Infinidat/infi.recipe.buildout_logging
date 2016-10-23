@@ -3,8 +3,11 @@ __import__("pkg_resources").declare_namespace(__name__)
 import os
 import sys
 import logging
-import StringIO
 import time
+try:
+    import StringIO
+except:
+    from io import StringIO
 
 FORMATTER_KWARGS = dict(fmt='%(asctime)-25s %(levelname)-8s %(name)-50s %(message)s', datefmt='%Y-%m-%d %H:%M:%S %z')
 
@@ -56,9 +59,9 @@ class LogFileHandler(logging.FileHandler): # pragma: no cover
         return time.strftime("%Y-%m-%d.%H-%M")
 
 
-class DiskBackedStringIO(StringIO.StringIO):
+class DiskBackedStringIO(StringIO):
     def __init__(self, filename, stream):
-        StringIO.StringIO.__init__(self)
+        StringIO.__init__(self)
         self._fd = open(filename, 'a')
         self._stream = stream
 
