@@ -5,8 +5,8 @@ import sys
 import logging
 import time
 try:
-    import StringIO
-except:
+    from StringIO import StringIO
+except ImportError:
     from io import StringIO
 
 FORMATTER_KWARGS = dict(fmt='%(asctime)-25s %(levelname)-8s %(name)-50s %(message)s', datefmt='%Y-%m-%d %H:%M:%S %z')
