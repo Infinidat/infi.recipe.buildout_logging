@@ -61,7 +61,7 @@ class LogFileHandler(logging.FileHandler): # pragma: no cover
 
 class DiskBackedStringIO(StringIO):
     def __init__(self, filename, stream):
-        super(StringIO, self).__init__()
+        StringIO.__init__(self)
         self._fd = open(filename, 'a')
         self._stream = stream
 
